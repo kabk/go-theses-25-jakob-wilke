@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'Caslon';
-    src: url('../fonts/Caslon/Caslon_SVZ-Regular-Beta.otf');
+    src: url('../fonts/Caslon/rcsvzbeta.otf');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -20,7 +20,7 @@
 
 @font-face {
     font-family: 'Caslon';
-    src: url('../fonts/Caslon/Caslon_SVZ-Italic-Beta.otf');
+    src: url('../fonts/Caslon/icszvbeta.otf');
     font-weight: normal;
     font-style: italic;
     font-display: block;
