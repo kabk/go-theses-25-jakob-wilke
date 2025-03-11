@@ -1,0 +1,799 @@
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+    font-family: 'Caslon';
+    src: url('../fonts/Caslon/Caslon_SVZ-Regular-Beta.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Caslon';
+    src: url('../fonts/Caslon/Caslon_SVZ-Italic-Beta.otf');
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
+}
+
+@font-face {
+  font-family: 'Ready';
+  src: url('../fonts/Ready/ReadyActiveTest-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Ready';
+  src: url('../fonts/Ready/ReadyActiveTest-Regular.otf');
+  font-weight:bold;
+  font-style: normal;
+  font-display: block;
+}
+
+
+
+
+/* VARIABLES */
+
+:root {
+  /* Color values */
+  --color-background: rgb(255, 255, 255);
+  --color-text: rgb(0, 0, 0);
+  --color-text-link: rgba(0,0,255,0.8);
+  --color-text-link-hover: rgba(0,0,255,0.4);
+  /* Font values */
+  --font-text: 'Caslon', 'Times', 'serif';
+  --font-caption: 'Diatype', 'Helvetica', 'Arial', 'sans';
+  --font-size: 28px;
+  --font-size-caption: 20px;
+  --line-height: 1.23;
+  --text-indent: 48px;
+  /* Margin value */
+  --margin: 1rem;
+}
+
+
+
+/* GENERAL STYLES */
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+font-family: var(--font-text);
+font-size: var(--font-size);
+line-height: var(--line-height);
+font-variant-numeric: oldstyle-nums;
+scroll-behavior: smooth !important;
+box-sizing: border-box;
+}
+
+html {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+  position:relative;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  width:100%;
+  height:auto;
+  overflow-y:auto;
+}
+
+
+/* .footnote-ref {
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.footnote-tooltip {
+  position: absolute;
+  margin: 5px;
+  overflow-wrap: break-word;
+  width: max-content; 
+  min-width: 8ch; 
+  max-width: 36ch;
+  white-space: normal; 
+  background: #000000;
+  color: white;
+  border: 1.5px solid #000000; 
+  padding: var(--font-size-caption);
+  font-size: var(--font-size-caption);
+  display: none;
+  z-index: 1000;
+  text-indent: 0;
+}
+
+
+.footnote-ref.active .footnote-tooltip {
+  display: block;
+} */
+
+
+.highlighted-footnote {
+color: red;
+  transition: color 0.3s ease-in-out;
+  scroll-margin-top: 10vh;
+}
+
+.sig {
+  width: 15%;
+  margin-left: var(--text-indent);
+  margin-top: 48px;
+}
+
+
+.landing {
+  position: relative;
+
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+ overflow: hidden;
+}
+
+.title-image {
+  width: 90vw;
+margin-right: 2vw;
+}
+
+
+.title {
+  /* font-family: 'Ready';
+  font-size: 50vw; */
+  font-size: 200px;
+}
+
+.menu-button {
+  position: fixed;
+  left: 2vh;
+  bottom: 2vh;
+  z-index: 2000;
+mix-blend-mode: difference;
+color: white;
+text-align: center;
+border-radius: 50%;
+border: 1.5px solid white;
+width: 32px;
+height: 32px;
+vertical-align: baseline;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.menu-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.info {
+padding-top: 2px;
+}
+
+.credits {
+  text-align: right;
+  font-size: var(--font-size-caption);
+}
+
+
+nav {
+  width: 26vw;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: -26vw;
+  height: 100vh;
+  transition: left 0.3s ease-in-out;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 1999;
+padding: 3vh;
+box-sizing: border-box;
+border-right: 1px solid white;
+}
+
+nav a {
+  color: white;
+  opacity: 1;
+}
+
+nav a:hover {
+  color: white;
+ opacity: 0.8;
+}
+
+.nav-list {
+  list-style: decimal;
+}
+
+.active {
+  left: 0;
+}
+
+
+#abstract-container .viewer {
+
+height: unset;
+}
+
+#epilogue-container .viewer {
+  height: unset;
+  }
+
+  #epilogue-container {
+    margin-bottom: 84px;
+  }
+
+.line-separator {
+  height: 96px;
+}
+
+
+.container {
+  display: flex;
+
+}
+
+.heading-container{
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+}
+
+.image-column {
+  flex: 6;
+  display: flex;
+padding-top: 0.5vh;
+padding-left: 0.5vh;
+  position: sticky;
+  top: 1.5vh;
+  margin-left: 1.5vh;
+height: min-content;
+
+
+}
+
+.thumbnail-column {
+  flex: 1;
+  /* top: 20px; */
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  height: fit-content;
+  background-color: white;
+
+}
+
+.viewer {
+  flex: 9;
+  height: 100vh;
+  /* position: sticky;
+  top: 2vw; */
+}
+
+/* .viewer-portrait figure {
+margin: 0% 16% 0% 16%;
+} */
+
+.text-column {
+flex: 7;
+
+}
+
+.footnote-column {
+  flex: 2;
+}
+
+
+.thumbnail-column img {
+  width: 100%;
+  cursor: pointer;
+transition: 0.3s;
+opacity: 1;
+filter: grayscale(100%);
+border: 1px solid black;
+filter: contrast(1.2) grayscale(100%);
+}
+
+
+.thumbnail-column img:hover {
+  /* width: 110%; */
+filter: grayscale(0%);
+margin-left: 2vh;
+
+}
+
+
+
+
+.viewer {
+
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+
+  position: relative;
+  /* height: 100vh; */
+
+}
+figure {
+  text-align: left;
+  display: none;
+  position: relative;
+ /* padding-bottom: 3vh; */
+  width: 100%;
+  margin: 0% 16% 0% 16%;
+  position: sticky;
+  /* top: 10.5vh; */
+  top: 2vh;
+}
+
+
+
+figure.show {
+  display: block;
+
+}
+figure img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid black;
+  /* border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+figcaption {
+font-size: var(--font-size-caption);
+  /* font-family: var(--font-caption); */
+}
+
+.clickable {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clickable:hover {
+  color: blue;
+}
+
+/* Styling for the close button */
+.close-button {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  /* border-radius: 50%; */
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  /* font-family: var(--font-caption); */
+}
+
+figure:hover .close-button {
+  opacity: 1;
+}
+
+.footnotes {
+  word-wrap: break-word;
+text-indent: 0px;
+page-break-inside: avoid;
+}
+
+.ol-footnotes {
+columns: 3;
+column-gap: 8vh;
+break-inside: avoid-column;
+page-break-inside: avoid;
+-webkit-column-break-inside: avoid;
+list-style:decimal-leading-zero;
+font-size: var(--font-size-caption);
+padding-left: 1vh;
+}
+
+.ol-footnotes p {
+  text-indent: 0;
+}
+
+ol {
+  list-style-position: outside; /* Ensure numbers are outside */
+}
+
+ol li {
+  padding-left: 12px;  /* Adjust the space between the number and the content */
+  break-inside: avoid; /* Prevent list items from being broken across columns */
+
+}
+
+.footnote-container{
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-bottom: 2vh;
+}
+
+.footnotes a {
+  color: white;
+}
+
+.footnote:target {
+  background-color: yellow;
+}
+
+
+
+.footnotes a:hover {
+  color: red;
+}
+
+.references {
+  background-color: black;
+color: white;
+padding: 0vh 4vh 4vh 4vh;
+display: flex;
+flex-direction: column;
+border-bottom: 1px solid white;
+}
+
+.bibliography {
+  word-wrap: break-word;
+  columns: 2;
+  gap: 2vh;
+  font-size: var(--font-size-caption);
+background-color: black;
+color: white;
+page-break-inside: avoid;
+}
+
+.bibliography p {
+  padding-left: var(--text-indent);
+text-indent: calc(-1 * var(--text-indent));
+}
+
+.bibliography a {
+ color: white;
+}
+
+.bibliography a:hover {
+color: white;
+ }
+
+ .thank-you {
+  text-align: center;
+  font-size: var(--font-size-caption);
+
+ }
+
+ .thanks {
+  text-transform: uppercase;
+ }
+
+ /* .image-sources {
+font-variant-numeric: lining-nums;
+ } */
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  /* text-decoration: underline; */
+}
+
+
+h1{
+font-size: var(--font-size);
+font-weight: normal;
+text-transform: uppercase;
+margin-top: 84px;
+margin-bottom: 28px;
+font-variant-numeric: lining-nums;
+margin-left: var(--text-indent);
+margin-right: 96px;
+scroll-margin-top: 84px;
+}
+
+/* .heading-1 {
+  display: flex;
+}
+
+.chapter-number {
+  width: 48px;
+  font-size: var(--font-size);
+font-weight: normal;
+text-transform: uppercase;
+margin-top: 84px;
+margin-bottom: 28px;
+font-variant-numeric: lining-nums;
+
+} */
+
+h2{
+  font-size: var(--font-size);
+  font-weight: normal;
+font-style: italic;
+  text-indent: var(--text-indent);
+  margin-top: calc(var(--font-size) * 2);
+  margin-bottom: var(--font-size);
+  font-variant-numeric: lining-nums;
+  scroll-margin-top: calc(var(--font-size)* 2);
+}
+
+#beautiful-hands {
+  margin-top: 0px;
+}
+
+h3{
+  /* h3 style */
+}
+
+h4, h5, h6{
+  /* h4-h5-h6 style */
+}
+
+p{
+margin: 0;
+text-indent: var(--text-indent);
+}
+
+.sinnesabschnitt {
+  height: var(--font-size);
+}
+
+.no-indent {
+  text-indent: 0;
+}
+
+blockquote + p {
+  text-indent: 0;
+}
+
+.blockquote-after-heading {
+  margin-top: 0;
+}
+
+.container p:first-of-type {
+  text-indent: 0;
+}
+
+ol, ul{
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+blockquote{
+  /* blockquote element style */
+}
+
+hr{
+  /* horizontal rule style */
+}
+
+
+
+/* PAGE STYLES */
+
+/* page structure */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* navigation */
+ 
+nav{
+  
+}
+
+/* content */
+
+main{
+ 
+}
+
+summary{
+  
+}
+
+
+
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* responsive typeface for various breaking points, sets the default 'rem' value */
+@media (max-width: 299px) { :root{--font-size: 18px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 16px; --font-size-caption: 14px;} }
+@media (min-width: 340px) and (max-width: 440px) { :root{--font-size: 18px; --font-size-caption: 14px; --text-indent: 28px;} }
+@media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 24px; --font-size-caption: 18px; --text-indent: 40px;} }
+@media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 21px; --font-size-caption: 18px;}}
+@media (min-width: 993px) and (max-width: 1200px) { :root{--font-size: 24px;}}
+@media (min-width: 1201px) and (max-width: 1320px) { :root{--font-size: 25px;} }
+/* @media (min-width: 1321px) { :root{--font-size: 24px;} html, body {font: var(--font-size) var(--font-text); } } */
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+
+@media (min-width: 1920px) {
+  :root {
+
+    --font-size: 35px;
+    --font-size-caption: 28px;
+    --line-height: 1.23;
+    --text-indent: 48px;
+
+  }
+
+}
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+  .menu-button {
+background-color: black;
+color: white;
+    mix-blend-mode: normal;
+    border: none;
+left: 4vw;
+    bottom: 4vw;
+border: 1px solid white;
+margin: auto;
+
+
+
+  }
+
+  .menu-button:hover {
+    background-color: black;
+    color: white;
+
+  }
+
+  nav {
+    width: 80vw;
+    top: 0;
+    left: -80vw;
+    height: 100vh;
+  padding: 4vw;
+  }
+  
+
+.image-column, .footnote-column {
+  display: none;
+}
+
+.container {
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+figure {
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  position: relative;
+  top: 0;
+  padding: 0;
+}
+
+figure + p {
+  text-indent: 0;
+}
+
+#disobedient-hands {
+  margin-bottom: 0;
+}
+
+.last-image {
+  margin-bottom: 0;
+}
+
+.clickable:hover {
+  color: black;
+}
+
+.bibliography {
+  columns: 1;
+}
+
+.ol-footnotes {
+  columns: 1;
+}
+
+.references {
+  padding: 0 4vw 4vw 4vw;
+}
+
+  /* utility classes, mobile */
+
+  .desktop-only{
+    display:none;
+  }
+
+  .mobile-only{
+    display:block;
+  }
+
+}
+
+
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+  
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+   /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
+
+
