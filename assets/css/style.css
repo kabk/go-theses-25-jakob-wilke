@@ -11,23 +11,23 @@
 */
 
 @font-face {
-    font-family: 'csvz';
-    src: url('../fonts/Caslon/rcsvzbeta.otf');
+    font-family: 'textface';
+    src: url('../fonts/textface/rc.otf');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 
 @font-face {
-    font-family: 'csvz';
-    src: url('../fonts/Caslon/icszvbeta.otf');
+    font-family: 'textface';
+    src: url('../fonts/textface/ic.otf');
     font-weight: normal;
     font-style: italic;
     font-display: block;
 }
 
 
-@font-face {
+/* @font-face {
   font-family: 'Article';
   src: url('../fonts/Article/ArticleText-Regular.woff2');
   font-weight: normal;
@@ -41,7 +41,7 @@
   font-weight: normal;
   font-style: italic;
   font-display: block;
-}
+} */
 
 
 
@@ -55,7 +55,7 @@
   --color-text-link: rgba(0,0,255,0.8);
   --color-text-link-hover: rgba(0,0,255,0.4);
   /* Font values */
-  --font-text: 'Article', 'Times', 'serif';
+  --font-text: 'textface', 'Times', 'serif';
   --font-caption: 'Diatype', 'Helvetica', 'Arial', 'sans';
   --font-size: 28px;
   --font-size-caption: 20px;
