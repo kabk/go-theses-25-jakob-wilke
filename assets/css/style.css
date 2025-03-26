@@ -30,8 +30,7 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('../fonts/orchard/Orchard-Linear.woff2') format('woff2'),
-  url('../fonts/orchard/Orchard-Linear.woff') format('woff');
+  src: url('../fonts/orchard/Orchard-Linear.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
