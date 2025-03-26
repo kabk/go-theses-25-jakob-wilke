@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'textface';
-    src: url('../fonts/textface/CaslonSVZ-Regular-BETA01-WEB_ttf.woff2');
+    src: url('../fonts/CaslonSVZ-Regular-BETA01-WEB_ttf.woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'textface';
-    src: url('../fonts/textface/CaslonSVZ-ItalicBeta1-WEB_ttf.woff2');
+    src: url('../fonts/CaslonSVZ-ItalicBeta1-WEB_ttf.woff2');
     font-weight: normal;
     font-style: italic;
     font-display: block;
@@ -22,10 +22,10 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('/assets/fonts/orchard/Orchard-Linear.otf');
+  src: url('/assets/fonts/Orchard-Linear.otf');
   font-weight: normal;
   font-style: italic;
-  font-display: block;
+  font-display: swap;
 }
 
 
