@@ -17,6 +17,27 @@ function docReady(fn) {
 
 docReady(function() {
 
+    // path
+
+    function handleScroll() {
+      let scrollPosition = window.scrollY;
+      let maxScroll = window.innerHeight; // 100vh
+      let path = document.querySelector(".path");
+      let bg = document.querySelector(".background");
+    
+      // Map scroll position to stroke-dashoffset (0 to 3000)
+      let offset = Math.min(3000, Math.max(0, (scrollPosition / maxScroll) * 3000));
+      if (path) path.style.strokeDashoffset = offset;
+    
+      // Map scroll position to background opacity (1 to 0)
+      let delayFactor = 0.75; // 25% delay before background starts fading
+      let normalizedScroll = (scrollPosition / maxScroll - delayFactor) / (1 - delayFactor);
+      let opacity = Math.max(0, 1 - Math.max(0, normalizedScroll));
+      if (bg) bg.style.opacity = opacity;
+    }
+    
+    document.addEventListener("scroll", handleScroll);
+    window.addEventListener("load", handleScroll); // 👈 ensures correct state on refresh
     // menu
 
     const menuButton = document.querySelector(".menu-button");
@@ -130,26 +151,54 @@ containers.forEach((container) => {
 //     }
 //   });
 
+// Handle clicks on footnote references
 document.querySelectorAll(".footnote-ref").forEach(function (ref) {
-    ref.addEventListener("click", function (event) {
-      // Remove previous highlights
-      document.querySelectorAll(".highlighted-footnote").forEach(function (footnote) {
-        footnote.classList.remove("highlighted-footnote");
-      });
+  ref.addEventListener("click", function (event) {
+    let allFootnotes = document.querySelectorAll(".ol-footnotes li");
 
-      // Get the corresponding footnote ID
-      let footnoteId = this.getAttribute("href").substring(1); // Remove '#'
-      let footnoteElement = document.getElementById(footnoteId);
+    // Reset all footnotes: remove highlight and dim them
+    allFootnotes.forEach(function (footnote) {
+      footnote.classList.remove("highlighted-footnote");
+      footnote.classList.add("dimmed-footnote");
+    });
 
-      // Add highlight class
-      if (footnoteElement) {
-        footnoteElement.classList.add("highlighted-footnote");
+    // Get the corresponding footnote ID
+    let footnoteId = this.getAttribute("href").substring(1);
+    let footnoteElement = document.getElementById(footnoteId);
 
-        // Optionally, smooth scroll to the footnote
-        footnoteElement.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
+    // Highlight the selected footnote and remove dimming
+    if (footnoteElement) {
+      footnoteElement.classList.add("highlighted-footnote");
+      footnoteElement.classList.remove("dimmed-footnote");
+
+      // Smooth scroll to the footnote
+      footnoteElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+});
+
+// Handle clicks on footnote backlinks
+document.querySelectorAll(".footnote-back").forEach(function (backlink) {
+  backlink.addEventListener("click", function () {
+    // Reset all footnotes
+    document.querySelectorAll(".ol-footnotes li").forEach(function (footnote) {
+      footnote.classList.remove("highlighted-footnote", "dimmed-footnote");
     });
   });
+});
+
+
+// heading
+if (window.matchMedia('(hover: none)').matches) {
+  document.querySelectorAll('.chapter-title').forEach(title => {
+    title.addEventListener('click', () => {
+      title.querySelectorAll('.legible').forEach(el => {
+        el.classList.toggle('visible');
+      });
+    });
+  });
+}
+
 
 });
 
