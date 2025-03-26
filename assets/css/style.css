@@ -2,9 +2,17 @@
 
 
 
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
 @font-face {
     font-family: 'textface';
-    src: url('../fonts/CaslonSVZ-Regular-BETA01-WEB_ttf.woff2');
+    src: url('../fonts/textface/CaslonSVZ-Regular-BETA01-WEB_ttf.woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -12,7 +20,7 @@
 
 @font-face {
     font-family: 'textface';
-    src: url('../fonts/CaslonSVZ-ItalicBeta1-WEB_ttf.woff2');
+    src: url('../fonts/textface/CaslonSVZ-ItalicBeta1-WEB_ttf.woff2');
     font-weight: normal;
     font-style: italic;
     font-display: block;
@@ -22,10 +30,11 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('/assets/fonts/Orchard-Linear.otf');
+  src: url('../fonts/orchard/Orchard-Linear.woff2') format('woff2'),
+  url('../fonts/orchard/Orchard-Linear.woff') format('woff');
   font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+  font-style: normal;
+  font-display: block;
 }
 
 
@@ -46,7 +55,7 @@
   --font-caption: 'Diatype', 'Helvetica', 'Arial', 'sans';
   --font-size: 26px;
   --font-size-caption: 19px;
-  --line-height: 1.25;
+  --line-height: 1.24;
   --text-indent: 46px;
   --heading-1-size: 4vw;
   /* Margin value */
