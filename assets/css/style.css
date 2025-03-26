@@ -22,7 +22,7 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('../fonts/orchard/Orchard-Linear.otf');
+  src: url('/assets/fonts/orchard/Orchard-Linear.otf');
   font-weight: normal;
   font-style: italic;
   font-display: block;
