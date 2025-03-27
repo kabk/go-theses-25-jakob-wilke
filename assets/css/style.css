@@ -852,7 +852,7 @@ summary{
   /* your 'mobile' overriding css properties here */
 
   :root {
-    --heading-1-spacing: 15vh;
+    --heading-1-spacing: 11vh;
   }
 
   .path {
