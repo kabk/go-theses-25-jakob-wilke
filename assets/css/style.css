@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('../fonts/orchard/Orchard-Linear-modified.otf');
+  src: url('../fonts/orchard/Orchard-Linear-modified-2.otf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -60,7 +60,7 @@
   /* Margin value */
   --margin: 1rem;
   /* Padding Value */
-  --heading-1-spacing: 10vh;
+  --heading-1-spacing: 13vh;
 }
 
 
@@ -619,6 +619,8 @@ text-align: center;
 /* font-feature-settings: "liga" 0, "kern" 0; */
 line-height: 1;
 word-break: keep-all;
+margin-bottom: 0;
+margin-top: 0;
 }
 
 .heading-1-container {
@@ -626,7 +628,7 @@ word-break: keep-all;
   justify-content: center;
   align-items: center;
   margin-bottom: var(--heading-1-spacing);
-  margin-top: calc(var(--heading-1-spacing)* 1.2);
+  margin-top: calc(var(--heading-1-spacing)* 1.6);
 }
 /* 
 .legible {
@@ -695,7 +697,7 @@ h2{
   font-weight: normal;
 font-style: italic;
   text-indent: var(--text-indent);
-  margin-top: calc(var(--font-size) * 2);
+  margin-top: calc(var(--font-size) * 4);
   margin-bottom: var(--font-size);
   font-variant-numeric: lining-nums;
   scroll-margin-top: calc(var(--font-size)* 2);
