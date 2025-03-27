@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('../fonts/orchard/Orchard-Linear-modified-2.otf');
+  src: url('../fonts/orchard/Orchard-Linear-modified.otf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -60,7 +60,7 @@
   /* Margin value */
   --margin: 1rem;
   /* Padding Value */
-  --heading-1-spacing: 13vh;
+  --heading-1-spacing: 14vh;
 }
 
 
@@ -648,6 +648,7 @@ transition: 500ms ease-in-out;
 } */
 
 
+
 .legible {
   opacity: 0;
   font-family: 'textface';
@@ -656,7 +657,7 @@ transition: 500ms ease-in-out;
   font-size: 0.5px;
 }
 
-/* Ensure visible class works even without hover */
+
 .legible.visible {
   opacity: 1;
   font-size: var(--font-size);
@@ -665,7 +666,6 @@ transition: 500ms ease-in-out;
   pointer-events: auto;
 }
 
-/* Hover-based styles for desktop */
 @media (hover: hover) and (pointer: fine) {
   .chapter-title:hover .legible {
     opacity: 1;
@@ -690,6 +690,7 @@ transition: 500ms ease-in-out;
   text-transform: uppercase;
   font-variant-numeric: lining-nums;
   letter-spacing: 1px;
+vertical-align: -0.3vh;
 }
 
 h2{
