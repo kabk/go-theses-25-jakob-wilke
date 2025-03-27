@@ -189,15 +189,25 @@ document.querySelectorAll(".footnote-back").forEach(function (backlink) {
 
 
 // heading
-if (window.matchMedia('(hover: none)').matches) {
-  document.querySelectorAll('.chapter-title').forEach(title => {
-    title.addEventListener('click', () => {
-      title.querySelectorAll('.legible').forEach(el => {
-        el.classList.toggle('visible');
-      });
+const isTouch =
+'ontouchstart' in window ||
+navigator.maxTouchPoints > 0 ||
+window.matchMedia('(hover: none)').matches;
+
+if (isTouch) {
+document.querySelectorAll('.chapter-title').forEach(title => {
+  title.addEventListener('click', () => {
+    title.querySelectorAll('.legible').forEach(el => {
+      el.classList.toggle('visible');
     });
   });
+});
 }
+
+console.log('window.matchMedia("(hover: none)").matches:', window.matchMedia('(hover: none)').matches);
+console.log('ontouchstart in window:', 'ontouchstart' in window);
+console.log('navigator.maxTouchPoints:', navigator.maxTouchPoints);
+
 
 
 });

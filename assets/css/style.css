@@ -30,7 +30,7 @@
 
 @font-face {
   font-family: 'orchard';
-  src: url('../fonts/orchard/Orchard-Linear.ttf');
+  src: url('../fonts/orchard/Orchard-Linear-modified.otf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -54,7 +54,7 @@
   --font-caption: 'Diatype', 'Helvetica', 'Arial', 'sans';
   --font-size: 26px;
   --font-size-caption: 19px;
-  --line-height: 1.24;
+  --line-height: 1.26;
   --text-indent: 46px;
   --heading-1-size: 4vw;
   /* Margin value */
@@ -616,6 +616,7 @@ h1{
   font-size: var(--heading-1-size);
   transition: 0.3s ease-in-out;
 text-align: center;
+/* font-feature-settings: "liga" 0, "kern" 0; */
 line-height: 1;
 word-break: keep-all;
 }
@@ -627,7 +628,7 @@ word-break: keep-all;
   margin-bottom: var(--heading-1-spacing);
   margin-top: calc(var(--heading-1-spacing)* 1.2);
 }
-
+/* 
 .legible {
   opacity: 0;
   font-family: 'textface';
@@ -642,6 +643,35 @@ transition: 500ms ease-in-out;
   margin-left: 0.5vw;
   margin-right: 0.5vw;
   pointer-events: auto;
+} */
+
+
+.legible {
+  opacity: 0;
+  font-family: 'textface';
+  align-self: baseline;
+  transition: 500ms ease-in-out;
+  font-size: 0.5px;
+}
+
+/* Ensure visible class works even without hover */
+.legible.visible {
+  opacity: 1;
+  font-size: var(--font-size);
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  pointer-events: auto;
+}
+
+/* Hover-based styles for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .chapter-title:hover .legible {
+    opacity: 1;
+    font-size: var(--font-size);
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    pointer-events: auto;
+  }
 }
 
 /* .chapter-title:hover .legible {
@@ -657,6 +687,7 @@ transition: 500ms ease-in-out;
   font-size: var(--font-size);
   text-transform: uppercase;
   font-variant-numeric: lining-nums;
+  letter-spacing: 1px;
 }
 
 h2{
@@ -790,7 +821,7 @@ summary{
 /* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
 
 
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   .chapter-title:hover .legible {
     opacity: 1;
     font-size: var(--font-size);
@@ -798,7 +829,7 @@ summary{
     margin-right: 0.5vw;
     pointer-events: auto;
   }
-}
+} */
 
 
 @media (min-width: 1920px) {
@@ -816,6 +847,14 @@ summary{
 @media (max-width: 779px) {
 
   /* your 'mobile' overriding css properties here */
+
+  .path {
+  
+  margin-right: 2vw;
+    width: 80vw;
+  }
+
+
 
   .menu-button {
 background-color: black;
