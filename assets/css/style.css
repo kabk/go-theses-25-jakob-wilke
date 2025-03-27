@@ -851,6 +851,10 @@ summary{
 
   /* your 'mobile' overriding css properties here */
 
+  :root {
+    --heading-1-spacing: 15vh;
+  }
+
   .path {
   
   margin-right: 2vw;
@@ -916,6 +920,10 @@ figure {
 
 figure + p {
   text-indent: 0;
+}
+
+.chapter-number {
+  font-size: calc(var(--font-size) * 0.85);
 }
 
 #disobedient-hands {
