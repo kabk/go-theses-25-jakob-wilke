@@ -164,12 +164,12 @@ padding-left: 2ch;
 
 .landing {
   display: flex;
-  height: 115dvh;
   justify-content: center;
+  height: 115vh;
+  height: 115svh; 
+  height: 115dvh; 
+  height: 115lvh; 
 
-  height: 120dvh; /* Modern fix */
-  height: 120lvh; /* Alternative for large viewport */
-  height: 120svh; 
 }
 
 .school-date {
