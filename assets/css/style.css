@@ -166,6 +166,10 @@ padding-left: 2ch;
   display: flex;
   height: 115dvh;
   justify-content: center;
+
+  height: 120dvh; /* Modern fix */
+  height: 120lvh; /* Alternative for large viewport */
+  height: 120svh; 
 }
 
 .school-date {
