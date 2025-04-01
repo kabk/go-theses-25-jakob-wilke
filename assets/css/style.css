@@ -650,9 +650,6 @@ margin-top: 0;
   margin-top: calc(var(--heading-1-spacing)* 1.6);
 }
 
-.heading-mobile {
-  display: none;
-}
 
 /* 
 .legible {
@@ -912,13 +909,7 @@ margin: auto;
   padding: 4vw;
   }
 
-  .heading-desktop {
-    display: none;
-  }
-  
-  .heading-mobile {
-    display: block;
-  }
+
 
   
 
