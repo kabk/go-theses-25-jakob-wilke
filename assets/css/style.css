@@ -169,7 +169,7 @@ padding-left: 2ch;
   height: 115svh; 
   height: 115dvh; 
   height: 115lvh; 
-
+pointer-events: none;
 }
 
 .school-date {
@@ -187,7 +187,7 @@ padding-left: 2ch;
 
 .background{
 position: fixed;
-pointer-events: none;
+pointer-events: none !important;
       top: 0;
       left: 0;
       width: 100%;
@@ -198,15 +198,28 @@ pointer-events: none;
 }
 
 .path {
-  pointer-events: none;
+  pointer-events: none !important;
   stroke-dasharray: 3000;
   stroke-dashoffset: 0;
-  position: fixed;
+  /* position: fixed; */
 margin-right: 2vw;
-  transform: translateY(-50%);
-  top: 50%;
+  /* transform: translateY(-50%);
+  top: 50%; */
   width: 56vw;
-  margin-top: 6dvh;
+  margin-top: 12dvh;
+ 
+}
+
+.path-container {
+  pointer-events: none !important;
+  position: fixed;
+  width: 100vw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 
