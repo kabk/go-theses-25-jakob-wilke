@@ -18,16 +18,18 @@ function docReady(fn) {
 docReady(function() {
 
     // path
-
     function handleScroll() {
       let scrollPosition = window.scrollY;
       let maxScroll = window.innerHeight; // 100vh
-      let path = document.querySelector(".path");
+      let paths = document.querySelectorAll(".cls-1"); // Select all paths
       let bg = document.querySelector(".background");
     
-      // Map scroll position to stroke-dashoffset (0 to 3000)
-      let offset = Math.min(3000, Math.max(0, (scrollPosition / maxScroll) * 3000));
-      if (path) path.style.strokeDashoffset = offset;
+      paths.forEach((path) => {
+        let pathLength = path.getTotalLength(); // Get exact path length
+        path.style.strokeDasharray = pathLength; // Set strokeDasharray to full length
+        let offset = Math.min(pathLength, Math.max(0, (scrollPosition / maxScroll) * pathLength));
+        path.style.strokeDashoffset = offset;
+      });
     
       // Map scroll position to background opacity (1 to 0)
       let delayFactor = 0.75; // 25% delay before background starts fading
@@ -36,8 +38,23 @@ docReady(function() {
       if (bg) bg.style.opacity = opacity;
     }
     
+    // Ensure paths are initialized properly on load
+    function init() {
+      let paths = document.querySelectorAll(".cls-1");
+      
+      paths.forEach((path) => {
+        let pathLength = path.getTotalLength();
+        path.style.strokeDasharray = pathLength;
+        path.style.strokeDashoffset = pathLength; // Start fully hidden
+      });
+    
+      handleScroll();
+    }
+    
     document.addEventListener("scroll", handleScroll);
-    window.addEventListener("load", handleScroll); // 👈 ensures correct state on refresh
+    window.addEventListener("load", init);
+    
+   
     // menu
 
     const menuButton = document.querySelector(".menu-button");

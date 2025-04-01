@@ -205,8 +205,8 @@ pointer-events: none;
 margin-right: 2vw;
   transform: translateY(-50%);
   top: 50%;
-  width: 52vw;
-  margin-top: 4vh;
+  width: 56vw;
+  margin-top: 6dvh;
 }
 
 
@@ -868,7 +868,7 @@ summary{
 
   .path {
   
-  margin-right: 2vw;
+  margin-right: 3vw;
     width: 80vw;
   }
 
