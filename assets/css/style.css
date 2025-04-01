@@ -826,9 +826,9 @@ summary{
 @media (min-width: 340px) and (max-width: 440px) { :root{--font-size: 20px; --font-size-caption: 16px; --text-indent: 24px; --heading-1-size: 9.5vw; --heading-1-spacing: 6vh;} }
 @media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 24px; --font-size-caption: 18px; --text-indent: 40px; --heading-1-size: 9.5vw; --heading-1-spacing: 8vh;} }
 @media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 20px; --font-size-caption: 16px; --text-indent: 38px; --heading-1-size: 4.5vw;}}
-@media (min-width: 993px) and (max-width: 1200px) { :root{--font-size: 21px; --font-size-caption: 16px; --text-indent: 38px; --heading-1-size: 4.5vw;}}
-@media (min-width: 1201px) and (max-width: 1320px) { :root{--font-size: 22px; --font-size-caption: 17px; --text-indent: 38px; --heading-1-size: 4.5vw;} }
-@media (min-width: 1321px) and (max-width: 1440px) { :root{--font-size: 24px; --font-size-caption: 18px;} }
+@media (min-width: 993px) and (max-width: 1280px) { :root{--font-size: 20px; --font-size-caption: 16px; --text-indent: 38px; --heading-1-size: 4.5vw;}}
+@media (min-width: 1281px) and (max-width: 1320px) { :root{--font-size: 21px; --font-size-caption: 17px; --text-indent: 38px; --heading-1-size: 4.5vw;} }
+@media (min-width: 1321px) and (max-width: 1440px) { :root{--font-size: 22px; --font-size-caption: 17px; --text-indent: 40px;} }
 /* @media (min-width: 1321px) { :root{--font-size: 24px;} html, body {font: var(--font-size) var(--font-text); } } */
 
 /* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
