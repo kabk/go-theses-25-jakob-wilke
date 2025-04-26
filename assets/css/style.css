@@ -329,7 +329,7 @@ height: unset;
 .heading-container{
   display: flex;
   flex-direction: column;
-  flex: 8;
+  flex: 7.9;
   margin-right: 2vh;
 }
 
@@ -724,7 +724,7 @@ font-style: italic;
   margin-top: calc(var(--font-size) * 4);
   margin-bottom: var(--font-size);
   font-variant-numeric: lining-nums;
-  scroll-margin-top: calc(var(--font-size)* 2);
+  scroll-margin-top: calc(var(--font-size)* 4);
 }
 
 #beautiful-hands {
@@ -834,9 +834,9 @@ summary{
 
 /* responsive typeface for various breaking points, sets the default 'rem' value */
 @media (max-width: 299px) { :root{--font-size: 18px;} html, body {font: var(--font-size) var(--font-text); } }
-@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 18px; --font-size-caption: 14px; --text-indent: 20px; --heading-1-size: 9.5vw; --heading-1-spacing: 6vh;} }
-@media (min-width: 341px) and (max-width: 440px) { :root{--font-size: 20px; --font-size-caption: 16px; --text-indent: 24px; --heading-1-size: 9.5vw; --heading-1-spacing: 6vh;} }
-@media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 24px; --font-size-caption: 18px; --text-indent: 40px; --heading-1-size: 9.5vw; --heading-1-spacing: 8vh;} }
+@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 18px; --font-size-caption: 14px; --text-indent: 26px; --heading-1-size: 9.5vw; --heading-1-spacing: 9vh;} }
+@media (min-width: 341px) and (max-width: 440px) { :root{--font-size: 19px; --font-size-caption: 15px; --text-indent: 28px; --heading-1-size: 9.5vw; --heading-1-spacing: 9vh;} }
+@media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 24px; --font-size-caption: 18px; --text-indent: 40px; --heading-1-size: 9.5vw; --heading-1-spacing: 11vh;} }
 @media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 18px; --font-size-caption: 14px; --text-indent: 35px; --heading-1-size: 4.5vw;}}
 @media (min-width: 993px) and (max-width: 1280px) { :root{--font-size: 19px; --font-size-caption: 15px; --text-indent: 36px; --heading-1-size: 4.5vw;}}
 @media (min-width: 1281px) and (max-width: 1366px) { :root{--font-size: 21px; --font-size-caption: 17px; --text-indent: 36px; --heading-1-size: 4.5vw;} }
@@ -875,7 +875,7 @@ summary{
   /* your 'mobile' overriding css properties here */
 
   :root {
-    --heading-1-spacing: 11vh;
+    /* --heading-1-spacing: 11vh; */
   }
 
   .path {
@@ -911,7 +911,11 @@ margin: auto;
   padding: 4vw;
   }
 
-
+  h2{
+    margin-top: calc(var(--font-size) * 3);
+    margin-bottom: var(--font-size);
+    scroll-margin-top: calc(var(--font-size)* 3);
+  }
 
   
 
